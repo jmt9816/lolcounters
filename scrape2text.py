@@ -21,10 +21,6 @@ soup = BeautifulSoup(driver.page_source, "html.parser")
 a_tags = soup.find_all('a', href=True)
 champion_links = [tag['href'] for tag in a_tags if 'champions' in tag['href']]
 
-# Find all 'a' tags with href containing 'champions'
-a_tags = soup.find_all('a', href=True)
-champion_links = [tag['href'] for tag in a_tags if 'champions' in tag['href']]
-
 # Open the file in write mode
 with open('output.txt', 'w') as f:
     # Write all the links to the file
